@@ -22,7 +22,7 @@ class TweetJSONParser
                 for tweetJSON in rootObject {
                     if let
                         text = tweetJSON["text"] as? String,
-                        id = tweetJSON["id_str"] as? Int,
+                        id = tweetJSON["id"] as? Int,
                         userJSON = tweetJSON["user"] as? [String : AnyObject] {
                             
                             let user = self.userFromTweetJSON(userJSON)

@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource
     
     var datasource = [Tweet]() {
         didSet {
-            //
+//            self.tableView.reloadData()
         }
     }
     
