@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */; };
-		9F72B4E21C6930AB0000FA22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B4E11C6930AB0000FA22 /* ViewController.swift */; };
+		9F72B4E21C6930AB0000FA22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */; };
 		9F72B4E51C6930AB0000FA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B4E31C6930AB0000FA22 /* Main.storyboard */; };
 		9F72B4E71C6930AB0000FA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B4E61C6930AB0000FA22 /* Assets.xcassets */; };
 		9F72B4EA1C6930AB0000FA22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B4E81C6930AB0000FA22 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		9F72B4DC1C6930AB0000FA22 /* TweetCloneHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetCloneHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F72B4E11C6930AB0000FA22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9F72B4E41C6930AB0000FA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F72B4E61C6930AB0000FA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F72B4E91C6930AB0000FA22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		9FAAFA351C69367500B25CAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9F72B4E11C6930AB0000FA22 /* ViewController.swift */,
+				9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */,
 			);
 			name = Controller;
 			path = TweetCloneHomework;
@@ -187,7 +187,7 @@
 			files = (
 				9FAAFA341C69357900B25CAD /* user.swift in Sources */,
 				9FAAFA381C6936E800B25CAD /* TweetJSONParser.swift in Sources */,
-				9F72B4E21C6930AB0000FA22 /* ViewController.swift in Sources */,
+				9F72B4E21C6930AB0000FA22 /* HomeViewController.swift in Sources */,
 				9F72B4F31C6930ED0000FA22 /* tweet.swift in Sources */,
 				9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */,
 			);
