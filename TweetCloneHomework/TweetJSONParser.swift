@@ -12,9 +12,32 @@ typealias JSONParserCompletion = (success: Bool, tweets:[Tweet]?) -> ()
 
 class TweetJSONParser
 {
-    class func tweetJSONFrom
+    class func tweetJSONFrom(data: NSData, completion: JSONParserCompletion)
     {
-        
+        do {
+            if let rootObject = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [[String : AnyObject]] {
+                
+                var tweets = [Tweet]()
+                
+                for tweetJSON in rootObject {
+                    if let
+                        text = tweetJSON["text"] as? String,
+                        id = tweetJSON["id_str"] as? Int,
+                        userJSON = tweetJSON["user"] as? [String : AnyObject] {
+                            
+                            let user = self.userFromTweetJSON(userJSON)
+                            let tweet = Tweet(id: id, text: text, user: user)
+                            
+                            tweets.append(tweet)
+                    }
+                    
+                }
+                
+                completion(success: true, tweets: tweets)
+            }
+        }
+            
+        catch _ { completion(success: false, tweets: nil) }
     }
     
     class func userFromTweetJSON(tweetJSON: [String : AnyObject]) -> User
@@ -29,6 +52,8 @@ class TweetJSONParser
     
     class func JSONData() -> NSData
     {
-        
+        guard let tweetJSONPath = NSBundle.mainBundle().URLForResource("tweet", withExtension: "json") else { fatalError("Missing tweet.json") }
+        guard let tweetJSONData = NSData(contentsOfURL: tweetJSONPath) else { fatalError("Error creating NSData object.") }
+        return tweetJSONData
     }
 }
