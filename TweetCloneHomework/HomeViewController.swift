@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource
     
     var datasource = [Tweet]() {
         didSet {
-           self.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UITableViewDataSource
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.update()
+        self.accountAlert()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,17 +36,64 @@ class HomeViewController: UIViewController, UITableViewDataSource
     {
         self.tableView.dataSource = self
     }
+    
+    func accountAlert()
+    {
+        API.shared.login({ (accounts) -> () in
+            if let accounts = accounts {
+                if accounts.count > 1 {
+                    
+                    let alertControl = UIAlertController(title: "The decision is yours", message: "Choose an account", preferredStyle: .Alert)
+                    for account in accounts {
+                        
+                        let never = UIAlertAction(title: "\(account.username)", style: .Default) { (action) in
+                            API.shared.currAcc = account
+                            self.update()
+                        }
+                        alertControl.addAction(never)
+                    }
+                    
+                    self.presentViewController(alertControl, animated: true){
+                        //...
+                    }
+                    
+                    
+                } else {
+                    API.shared.currAcc = accounts.first
+                    self.update()
+                }
+                
+                
+            }
+        })
+        
+        
+        
+        
+    }
     func update()
     {
-        TweetJSONParser.tweetJSONFrom(TweetJSONParser.JSONData()) { (success, tweets) -> () in
-            if success {
-                if let tweets = tweets {
-                    self.datasource = tweets
+        API.shared.GETTweets { (tweets) -> () in
+            if let tweets = tweets {
+                self.datasource = tweets
+                
+                
+                API.shared.GETOAuthUser{ (user) -> () in
+                    if let user = user {
+                        print(user.name)
+                        print(user.profileImageURL)
+                        print(user.location)
+                    }
                 }
             }
         }
         
     }
+    
+    @IBAction func userButton(sender: UIButton) {
+        accountAlert()
+    }
+    
     
 }
 
