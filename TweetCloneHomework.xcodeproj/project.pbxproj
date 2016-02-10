@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F05B97E1C6A9AD600900344 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F05B97D1C6A9AD600900344 /* api.swift */; };
 		9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */; };
 		9F72B4E21C6930AB0000FA22 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */; };
 		9F72B4E51C6930AB0000FA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F72B4E31C6930AB0000FA22 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F05B97D1C6A9AD600900344 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = api.swift; path = ../api.swift; sourceTree = "<group>"; };
 		9F72B4DC1C6930AB0000FA22 /* TweetCloneHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TweetCloneHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */,
 				9F72B4EB1C6930AB0000FA22 /* Info.plist */,
+				9F05B97D1C6A9AD600900344 /* api.swift */,
 				9FAAFA371C6936E800B25CAD /* TweetJSONParser.swift */,
 			);
 			name = GlobalFiles;
@@ -189,6 +192,7 @@
 				9FAAFA381C6936E800B25CAD /* TweetJSONParser.swift in Sources */,
 				9F72B4E21C6930AB0000FA22 /* HomeViewController.swift in Sources */,
 				9F72B4F31C6930ED0000FA22 /* Tweet.swift in Sources */,
+				9F05B97E1C6A9AD600900344 /* api.swift in Sources */,
 				9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
