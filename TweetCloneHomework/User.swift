@@ -15,9 +15,9 @@ class User
     let name: String
     let profileImageURL: String
     let location: String
-    let screenName: String?
+    let screenName: String
     
-    init(name: String, profileImageURL: String, location: String, screenName: String? = nil)
+    init(name: String, profileImageURL: String, location: String, screenName: String)
     {
         self.name = name
         self.profileImageURL = profileImageURL

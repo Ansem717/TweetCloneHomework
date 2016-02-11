@@ -49,8 +49,9 @@ class TweetJSONParser
         guard let name = tweetJSON["name"] as? String else { fatalError("Failed to parse name") }
         guard let profileImageURL = tweetJSON["profile_image_url"] as? String else { fatalError("Failed to parse profile image") }
         guard let location = tweetJSON["location"] as? String else { fatalError("Failed to parse location") }
+        guard let screenName = tweetJSON["screen_name"] as? String else { fatalError() }
         
-        return User(name: name, profileImageURL: profileImageURL, location: location)
+        return User(name: name, profileImageURL: profileImageURL, location: location, screenName: screenName)
         
     }
     

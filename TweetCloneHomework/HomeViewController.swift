@@ -37,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.registerNib(UINib(nibName: "tweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
+        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
     }
     
     func accountAlert()
@@ -103,8 +103,7 @@ extension HomeViewController
     {
         let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
         tweetCell.tweet = self.datasource[indexPath.row]
-        
-     
+    
 //        tweetCell.imgView.image = 
         
         return tweetCell

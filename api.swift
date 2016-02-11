@@ -22,11 +22,17 @@ class API
     {
         
         if let _ = currAcc {
-            self.updateTimeline(completion)
+            self.updateTimeline("https://api.twitter.com/1.1/statuses/home_timeline.json", completion: completion)
             return
-        } else { print("Account is nil.")
+        } else {
+            print("Account is nil.")
         }
         
+    }
+    
+    func GETUserTweets(username: String, completion: (tweets: [Tweet]?) -> ())
+    {
+        self.updateTimeline("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)", completion: completion)
     }
     
     func GETImage(urlString: String, completion: (image: UIImage) -> ())
@@ -42,9 +48,16 @@ class API
         }
     }
     
-    private func updateTimeline(completion: (tweets: [Tweet]?) -> ())
+    private func updateTimeline(urlString: String, completion: (tweets: [Tweet]?) -> ())
     {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
+        let request = SLRequest(
+            forServiceType: SLServiceTypeTwitter,
+            requestMethod: .GET,
+            URL: NSURL(string: urlString),
+            parameters: nil)
+        
+        /// https://api.twitter.com/1.1/statuses/home_timeline.json//
+        
         
         request.account = self.currAcc
         request.performRequestWithHandler { (data, response, error) -> Void in

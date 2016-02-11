@@ -16,14 +16,14 @@ class Tweet
     let text: String
     let user: User?
     let retweetCount: Int?
-    let isRetweet: Bool?
+    let originalTweet: Tweet?
     
-    init(id: Int, text: String, user: User? = nil, retweetCount: Int? = nil, isRetweet: Bool? = false)
+    init(id: Int, text: String, user: User? = nil, retweetCount: Int? = nil, originalTweet: Tweet? = nil)
     {
         self.id = id
         self.text = text
         self.user = user
         self.retweetCount = retweetCount
-        self.isRetweet = isRetweet
+        self.originalTweet = originalTweet
     }
 }
