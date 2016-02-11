@@ -15,12 +15,13 @@ class User
     let name: String
     let profileImageURL: String
     let location: String
+    let screenName: String?
     
-    init(name: String, profileImageURL: String, location: String)
+    init(name: String, profileImageURL: String, location: String, screenName: String? = nil)
     {
         self.name = name
         self.profileImageURL = profileImageURL
         self.location = location
+        self.screenName = screenName
     }
-    
 }

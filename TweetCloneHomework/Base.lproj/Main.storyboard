@@ -85,7 +85,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfu-j4-N7O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.52017429684597039" green="0.83050835257067046" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0md-l1-v1J">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -137,7 +136,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CPJ-LV-nre">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.52017429684597039" green="0.83050835257067046" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

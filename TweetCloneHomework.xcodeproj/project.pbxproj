@@ -18,6 +18,8 @@
 		9FAAFA341C69357900B25CAD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAFA331C69357900B25CAD /* User.swift */; };
 		9FAAFA381C6936E800B25CAD /* TweetJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAFA371C6936E800B25CAD /* TweetJSONParser.swift */; };
 		E9E4FFF01C6C320E000A5312 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */; };
+		E9E537EF1C6CEC6300C6EC8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */; };
+		E9E537F11C6CF20F00C6EC8C /* SimpleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E537F01C6CF20F00C6EC8C /* SimpleCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9FAAFA331C69357900B25CAD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9FAAFA371C6936E800B25CAD /* TweetJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetJSONParser.swift; sourceTree = "<group>"; };
 		E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E9E537F01C6CF20F00C6EC8C /* SimpleCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9F72B4DF1C6930AB0000FA22 /* AppDelegate.swift */,
+				E9E537F01C6CF20F00C6EC8C /* SimpleCache.swift */,
 				9F72B4EB1C6930AB0000FA22 /* Info.plist */,
 				9F05B97D1C6A9AD600900344 /* api.swift */,
 				9FAAFA371C6936E800B25CAD /* TweetJSONParser.swift */,
@@ -103,6 +108,7 @@
 			children = (
 				9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */,
 				E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */,
+				E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			path = TweetCloneHomework;
@@ -195,8 +201,10 @@
 				9FAAFA381C6936E800B25CAD /* TweetJSONParser.swift in Sources */,
 				9F72B4E21C6930AB0000FA22 /* HomeViewController.swift in Sources */,
 				9F72B4F31C6930ED0000FA22 /* Tweet.swift in Sources */,
+				E9E537F11C6CF20F00C6EC8C /* SimpleCache.swift in Sources */,
 				E9E4FFF01C6C320E000A5312 /* TweetViewController.swift in Sources */,
 				9F05B97E1C6A9AD600900344 /* api.swift in Sources */,
+				E9E537EF1C6CEC6300C6EC8C /* ProfileViewController.swift in Sources */,
 				9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
