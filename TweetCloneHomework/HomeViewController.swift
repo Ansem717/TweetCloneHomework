@@ -21,8 +21,6 @@ class HomeViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
-        self.tableView.estimatedRowHeight = 100
-        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,6 +35,9 @@ class HomeViewController: UIViewController, UITableViewDataSource
     func setUpTableView()
     {
         self.tableView.dataSource = self
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.registerNib(UINib(nibName: "tweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
     }
     
     func accountAlert()
@@ -44,34 +45,23 @@ class HomeViewController: UIViewController, UITableViewDataSource
         API.shared.login({ (accounts) -> () in
             if let accounts = accounts {
                 if accounts.count > 1 {
-                    
                     let alertControl = UIAlertController(title: "The decision is yours", message: "Choose an account", preferredStyle: .Alert)
                     for account in accounts {
-                        
                         let never = UIAlertAction(title: "\(account.username)", style: .Default) { (action) in
                             API.shared.currAcc = account
                             self.update()
                         }
                         alertControl.addAction(never)
                     }
-                    
                     self.presentViewController(alertControl, animated: true){
                         //...
                     }
-                    
-                    
                 } else {
                     API.shared.currAcc = accounts.first
                     self.update()
                 }
-                
-                
             }
         })
-        
-        
-        
-        
     }
     func update()
     {
@@ -95,15 +85,27 @@ class HomeViewController: UIViewController, UITableViewDataSource
     @IBAction func userButton(sender: UIButton) {
         accountAlert()
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == TweetViewController.identifier {
+//            guard let detailViewController = segue.destinationViewController as? ProfileViewController else {
+//                fatalError()
+//            }
+//            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+//            detailViewController.tweet = self.tweets[indexPath.row]
+//        }
+//    }
 }
 
 extension HomeViewController
 {
-    func configureCellForIndexPath(indexPath: NSIndexPath) -> UITableViewCell
+    func configureCellForIndexPath(indexPath: NSIndexPath) -> TweetCell
     {
-        let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath)
-        let tweet = self.datasource[indexPath.row]
-        tweetCell.textLabel?.text = tweet.text
+        let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
+        tweetCell.tweet = self.datasource[indexPath.row]
+        
+     
+//        tweetCell.imgView.image = 
         
         return tweetCell
     }

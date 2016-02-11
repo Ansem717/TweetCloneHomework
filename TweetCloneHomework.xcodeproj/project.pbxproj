@@ -20,6 +20,8 @@
 		E9E4FFF01C6C320E000A5312 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */; };
 		E9E537EF1C6CEC6300C6EC8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */; };
 		E9E537F11C6CF20F00C6EC8C /* SimpleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E537F01C6CF20F00C6EC8C /* SimpleCache.swift */; };
+		E9E537F31C6CF5DE00C6EC8C /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E537F21C6CF5DE00C6EC8C /* TweetCell.xib */; };
+		E9E537F51C6CF63B00C6EC8C /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E537F41C6CF63B00C6EC8C /* TweetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E9E537F01C6CF20F00C6EC8C /* SimpleCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCache.swift; sourceTree = "<group>"; };
+		E9E537F21C6CF5DE00C6EC8C /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		E9E537F41C6CF63B00C6EC8C /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TweetCell.swift; path = ../TweetCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			children = (
 				9F72B4E11C6930AB0000FA22 /* HomeViewController.swift */,
 				E9E4FFEF1C6C320E000A5312 /* TweetViewController.swift */,
+				E9E537F41C6CF63B00C6EC8C /* TweetCell.swift */,
 				E9E537EE1C6CEC6300C6EC8C /* ProfileViewController.swift */,
 			);
 			name = Controller;
@@ -119,6 +124,7 @@
 			children = (
 				9F72B4E31C6930AB0000FA22 /* Main.storyboard */,
 				9F72B4E61C6930AB0000FA22 /* Assets.xcassets */,
+				E9E537F21C6CF5DE00C6EC8C /* TweetCell.xib */,
 				9F72B4E81C6930AB0000FA22 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -184,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F72B4EA1C6930AB0000FA22 /* LaunchScreen.storyboard in Resources */,
+				E9E537F31C6CF5DE00C6EC8C /* TweetCell.xib in Resources */,
 				9F72B4E71C6930AB0000FA22 /* Assets.xcassets in Resources */,
 				9F72B4E51C6930AB0000FA22 /* Main.storyboard in Resources */,
 				9F72B4F51C6931190000FA22 /* tweet.json in Resources */,
@@ -204,6 +211,7 @@
 				E9E537F11C6CF20F00C6EC8C /* SimpleCache.swift in Sources */,
 				E9E4FFF01C6C320E000A5312 /* TweetViewController.swift in Sources */,
 				9F05B97E1C6A9AD600900344 /* api.swift in Sources */,
+				E9E537F51C6CF63B00C6EC8C /* TweetCell.swift in Sources */,
 				E9E537EF1C6CEC6300C6EC8C /* ProfileViewController.swift in Sources */,
 				9F72B4E01C6930AB0000FA22 /* AppDelegate.swift in Sources */,
 			);

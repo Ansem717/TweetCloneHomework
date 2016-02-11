@@ -29,6 +29,19 @@ class API
         
     }
     
+    func GETImage(urlString: String, completion: (image: UIImage) -> ())
+    {
+        NSOperationQueue().addOperationWithBlock { () -> Void in
+            guard let url = NSURL(string: urlString) else {return}
+            guard let data = NSData(contentsOfURL: url) else { return }
+            guard let image = UIImage(data: data) else {return}
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                completion(image: image)
+            })
+        }
+    }
+    
     private func updateTimeline(completion: (tweets: [Tweet]?) -> ())
     {
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json"), parameters: nil)
