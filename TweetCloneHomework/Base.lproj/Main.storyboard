@@ -25,11 +25,11 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xsn-7T-Ssx" id="N41-vn-sdp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zv0-ud-tMH">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zv0-ud-tMH">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,17 +37,26 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="5GO-bZ-Cgk" kind="show" id="jsW-HV-XfW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4hJ-1A-ccL"/>
-                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="T5T-ke-1Fc"/>
-                            <constraint firstAttribute="trailing" secondItem="HZ4-UQ-uxK" secondAttribute="trailing" id="qc2-BP-BzK"/>
-                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="trh-R3-CZd"/>
+                            <constraint firstAttribute="trailing" secondItem="HZ4-UQ-uxK" secondAttribute="trailing" id="H57-jj-I0A"/>
+                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="H8Y-yc-hkk"/>
+                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VOf-wO-7vT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HZ4-UQ-uxK" secondAttribute="bottom" id="kB6-sY-iDm"/>
+                            <constraint firstItem="HZ4-UQ-uxK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lzD-1q-oDT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H8Y-yc-hkk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Timeline" id="6SW-MR-O3E">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="AcV-hX-qB9">
@@ -68,6 +77,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1117" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ePP-Qn-AOV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fJ-J9-qGT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="5GO-bZ-Cgk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfu-j4-N7O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CwM-v2-9Vx" kind="relationship" relationship="rootViewController" id="JrG-0X-sZm"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1892" y="399"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lr7-Cl-R1r">
+            <objects>
+                <viewController id="CwM-v2-9Vx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ISI-Kj-8hQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="e9v-Jb-Uyl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0I6-VW-vlW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Specific page for tweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3m-qO-84d">
+                                <rect key="frame" x="20" y="224" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1fM-FM-GiJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sI-VX-7Vk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645" y="399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KzJ-Xb-cQT">

@@ -21,6 +21,8 @@ class HomeViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,8 +95,6 @@ class HomeViewController: UIViewController, UITableViewDataSource
     @IBAction func userButton(sender: UIButton) {
         accountAlert()
     }
-    
-    
 }
 
 extension HomeViewController
