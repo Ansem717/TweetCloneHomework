@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,11 +21,11 @@ class HomeViewController: UIViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpTableView()
+        self.accountAlert()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.accountAlert()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,9 +35,10 @@ class HomeViewController: UIViewController, UITableViewDataSource
     func setUpTableView()
     {
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.registerNib(UINib(nibName: "TweetCell", bundle: nil), forCellReuseIdentifier: "TweetCell")
+        self.tableView.registerNib(UINib(nibName: "tweetCell", bundle: nil), forCellReuseIdentifier: "tweetCell")
     }
     
     func accountAlert()
@@ -75,6 +76,7 @@ class HomeViewController: UIViewController, UITableViewDataSource
                         print(user.name)
                         print(user.profileImageURL)
                         print(user.location)
+                        print(user.screenName)
                     }
                 }
             }
@@ -86,15 +88,15 @@ class HomeViewController: UIViewController, UITableViewDataSource
         accountAlert()
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == TweetViewController.identifier {
-//            guard let detailViewController = segue.destinationViewController as? ProfileViewController else {
-//                fatalError()
-//            }
-//            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
-//            detailViewController.tweet = self.tweets[indexPath.row]
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == TweetViewController.identifier() {
+            guard let tweetViewController = segue.destinationViewController as? TweetViewController else {
+                fatalError()
+            }
+            guard let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            tweetViewController.tweet = self.datasource[indexPath.row]
+        }
+    }
 }
 
 extension HomeViewController
@@ -103,8 +105,6 @@ extension HomeViewController
     {
         let tweetCell = self.tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! TweetCell
         tweetCell.tweet = self.datasource[indexPath.row]
-    
-//        tweetCell.imgView.image = 
         
         return tweetCell
     }
@@ -115,6 +115,9 @@ extension HomeViewController
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         return self.configureCellForIndexPath(indexPath)
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("TweetViewController", sender: nil)
     }
 }
 

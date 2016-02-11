@@ -127,14 +127,15 @@ class API
     
     func GETOAuthUser(completion: (user: User?) -> ())
     {
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "HTTPS://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
+        let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, URL: NSURL(string: "https://api.twitter.com/1.1/account/verify_credentials.json"), parameters: nil)
         
         request.account = self.currAcc
         
         request.performRequestWithHandler { ( data, response, error) -> Void in
             
             if let _ = error {
-                print("ERROR: SLRequest type .GET  returned status code \(response.statusCode)")
+                print("ERROR [USER]: SLRequest type .GET  returned status code \(response.statusCode)")
+ 
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock{ completion(user: nil) }; return
             }

@@ -18,7 +18,7 @@ class UserTimelineViewController: UIViewController
         
         if let tweet = self.tweet, username = tweet.user?.screenName {
             API.shared.GETUserTweets(username, completion: { (tweets) -> () in
-                if let tweets = tweet {
+                if let tweets = tweets {
                     for tweet in tweets {
                         print(tweet.text) //Displaying wrong user?
                     }

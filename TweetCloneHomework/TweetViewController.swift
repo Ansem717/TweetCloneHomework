@@ -11,16 +11,22 @@ import UIKit
 class TweetViewController: UIViewController {
     
     @IBOutlet weak var singleTweet: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userImg: UIImageView!
     
     var tweet: Tweet?
     
+    static func identifier () -> String {
+        return "TweetViewController"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTweet()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        setupTweet()
     }
     
     func setupTweet()
@@ -28,13 +34,18 @@ class TweetViewController: UIViewController {
         if let tweet = self.tweet, user = tweet.user {
             if let originalTweet = tweet.originalTweet, originalUser = originalTweet.user {
                 self.navigationItem.title = "Retweet"
-                self.tweetText.text = originalTweet.text
-                self.userLabel.text = "author: originalUser.name"
-                self.profileImage(originalUser.profileImageUrl, completion: { (image) -> () in
-                    self.profileImageView.image = image
-                }
+                self.singleTweet.text = originalTweet.text
+                self.userLabel.text = originalUser.name
+                self.profileImage(originalUser.profileImageURL, completion: { (image) -> () in
+                    self.userImg.image = image
+                })
             } else {
+                self.navigationItem.title = "Tweet"
                 self.singleTweet.text = tweet.text
+                self.userLabel.text = user.name
+                self.profileImage(user.profileImageURL, completion: { (image) -> () in
+                    self.userImg.image = image
+                })
             }
         }
     }
@@ -52,7 +63,8 @@ class TweetViewController: UIViewController {
     }
     
     func setupAppearance() {
-        
+        self.userImg.layer.cornerRadius = 50
+        self.userImg.clipsToBounds = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
